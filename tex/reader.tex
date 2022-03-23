@@ -21,9 +21,6 @@
 	\openin\sceneReader=format/ordering.txt
     \openin\titleReader=format/titles.txt
 
-    \read\titleReader to \chapterTitle
-    \chapter{\chapterTitle}
-
 	\loop
     \catcode`\^^M=9
 	\read\sceneReader to \filenameTitle
