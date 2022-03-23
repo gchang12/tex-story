@@ -4,31 +4,31 @@
 \sceneCount=0
 
 \def\readScene{
-	\ifx\filenameTitle\empty
+    \ifx\filenameTitle\empty
         \read\titleReader to \chapterTitle
-		\chapter{\chapterTitle}
+        \chapter{\chapterTitle}
         \sceneCount=0
-	\else
+    \else
         \advance\sceneCount by 1
         \ifnum\sceneCount>1
             \markScene
         \fi
-		\chapterBody\filenameTitle
+        \chapterBody\filenameTitle
     \fi
 }
 
 \def\readThisStory{
-	\openin\sceneReader=format/ordering.txt
+    \openin\sceneReader=format/ordering.txt
     \openin\titleReader=format/titles.txt
 
-	\loop
+    \loop
     \catcode`\^^M=9
-	\read\sceneReader to \filenameTitle
+    \read\sceneReader to \filenameTitle
     \catcode`\^^M=5
     \unless\ifeof\sceneReader
-	\readScene
-	\repeat
+    \readScene
+    \repeat
 
-	\closein\sceneReader
+    \closein\sceneReader
     \closein\titleReader
 }
