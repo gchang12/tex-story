@@ -68,20 +68,8 @@ If fewer than three consecutive dashes are encountered (e.g. hyphenated words an
 
 void changeExt(char *wpath){
 // Manually changing the extension of a string because I don't know how to use string methods
-    char s;
-    for (int i=0; i<strlen(wpath); i++){
-        if (i == strlen(wpath)-1)
-            s='x';
-        else if (i == strlen(wpath)-2)
-            s='e';
-/* Not actually needed
-        else if (i == strlen(wpath)-3)
-            s='t';
-*/
-        else
-            continue;
-        wpath[i]=s;
-    }
+    wpath[strlen(wpath)-2]='e';
+    wpath[strlen(wpath)-1]='x';
 }
 
 void rewriteFile(char *dest){
