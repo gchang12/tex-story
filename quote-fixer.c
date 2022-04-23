@@ -3,6 +3,7 @@ Given a string: "Stuff happens." More stuff happens. "Wait --- ". "No, I do not 
 -Replace all double-quotes that occur at the beginning with two left-quotes
 -Replace all double-quotes that occur after spaces
 --but only if said spaces are not preceded by em-dashes
+-Replace left double-quote, single left-quote scheme by thinspace macro
 */
 
 #include <stdio.h>
@@ -66,14 +67,17 @@ If fewer than three consecutive dashes are encountered (e.g. hyphenated words an
 }
 
 void changeExt(char *wpath){
+// Manually changing the extension of a string because I don't know how to use string methods
     char s;
     for (int i=0; i<strlen(wpath); i++){
-        if (i == strlen(wpath)-3)
-            s='t';
+        if (i == strlen(wpath)-1)
+            s='x';
         else if (i == strlen(wpath)-2)
             s='e';
-        else if (i == strlen(wpath)-1)
-            s='x';
+/* Not actually needed
+        else if (i == strlen(wpath)-3)
+            s='t';
+*/
         else
             continue;
         wpath[i]=s;
@@ -109,4 +113,3 @@ int main(int argc, char **argv){
     }
     return 0;
 }
-
