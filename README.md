@@ -1,6 +1,15 @@
 HOW TO USE
 ===
-Specify chapter titles in format/titles.txt
+Copy prose directory to root
 
-Specify ordering of text files in format/ordering.txt
-- A new chapter will begin at each blank line, so the number of blank lines must match the number of titles in format/titles.txt
+Run either c- or py- version of quote-fixer script
+
+Edit format/titles.txt to specify titles
+
+Edit format/ordering.txt to specify which files contain which scenes for which chapters
+
+Edit format/other.txt to specify: name of file containing epilogue (if any), title of story, name of author
+
+Each blank in this file specifies a new chapter
+
+pdflatex main
