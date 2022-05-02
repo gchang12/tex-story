@@ -59,14 +59,5 @@ def fix_story():
             file=filelist.pop()
             fix_file(file)
 
-def typeset_and_clone():
-    copy_files()
-    fix_story()
-    system('pdflatex -jobname=svtfoe4 main')
-    disk_drive='/media/eclair/NOOK'
-    success_message=r'\\nsvtfoe4.pdf successfully cloned to NOOK.'
-    sfmt=disk_drive,disk_drive,success_message
-    system('if [ -e %s/NOOK/ ]; then (cp svtfoe4.pdf %s/NOOK/ && echo %s); fi;'%sfmt)
-
 if __name__ == '__main__':
-    typeset_and_clone()
+    fix_story()
