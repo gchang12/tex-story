@@ -6,7 +6,7 @@
 #include <sys/stat.h> // To make directories 
 #include <string.h>
 
-#define ROOT "perl ~/Documents/coding/linux/convert-to-tex/tex-converter.pl "
+#define ROOT "perl tex-converter.pl "
 
 int main(void){
     char argv[3][8]={"","prose","scenes"};
