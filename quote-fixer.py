@@ -62,7 +62,7 @@ def fix_story():
 def typeset_and_clone():
     copy_files()
     fix_story()
-    cmd='pdflatex -jobname main'
+    cmd='pdflatex main'
     system(cmd+' && '+cmd);
 
 if __name__ == '__main__':
