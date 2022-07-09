@@ -59,5 +59,11 @@ def fix_story():
             file=filelist.pop()
             fix_file(file)
 
-if __name__ == '__main__':
+def typeset_and_clone():
+    copy_files()
     fix_story()
+    cmd='pdflatex -jobname=svtfoe4 main'
+    system(cmd+' && '+cmd);
+
+if __name__ == '__main__':
+    typeset_and_clone()
